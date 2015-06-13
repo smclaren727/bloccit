@@ -5,4 +5,4 @@
 Made with my mentor Chris Baglieri (http://www.chrisbaglieri.com/) at [https://www.bloc.io]
 
 App can be viewed live on Heroku at th following link:
-https://git.heroku.com/smclaren727-bloccit.git
+https://smclaren727-bloccit.herokuapp.com/
