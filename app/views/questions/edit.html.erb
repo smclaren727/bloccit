@@ -19,6 +19,12 @@
       <%= f.label :body %>
       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question body" %>
     </div>
+    <% if @question.resolved == false %>
+      <div class="form-group">
+        <%= f.label "Resolved? Check box if resolved" %>
+        <%= f.check_box :resolved, {}, checked_value = true, unchecked_value = false%> 
+      </div>
+      <% end %>
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>
     </div>
