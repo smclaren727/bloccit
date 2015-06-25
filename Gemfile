@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # user authentication with Devise
 gem 'devise'
+# for authorization levels
+gem 'pundit'
 # add Pry shell
 gem 'pry-rails'
 # Use ActiveModel has_secure_password
