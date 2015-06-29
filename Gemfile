@@ -60,5 +60,7 @@ group :development, :test do
   gem 'spring'
   # Figaro for some security
   gem 'figaro', '~> 1.1.1'
+  # markdown
+  gem 'redcarpet'
 end
 
