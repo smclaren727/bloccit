@@ -62,5 +62,10 @@ group :development, :test do
   gem 'figaro', '~> 1.1.1'
   # markdown
   gem 'redcarpet'
+  # handles the image uploading
+  gem 'carrierwave', '~> 0.10.0'
+  gem 'mini_magick', '~> 4.2.7'
+
+  gem 'fog', '~> 1.24.0'
 end
 
