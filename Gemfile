@@ -67,5 +67,8 @@ group :development, :test do
   gem 'mini_magick', '~> 4.2.7'
 
   gem 'fog', '~> 1.24.0'
+  
+  gem 'will_paginate', '~> 3.0.7'
+
 end
 
