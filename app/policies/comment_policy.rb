@@ -1,5 +1,15 @@
 class CommentPolicy < ApplicationPolicy
+
   def index?
     true
   end
- end
+
+  def create?
+    user.present?
+   end
+ 
+  def new?
+    create?
+  end
+  
+end

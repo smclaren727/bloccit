@@ -11,8 +11,10 @@
     <br>
       <h4> COMMENTS </h4>
       <%= render @comments %>
+      <% if policy(@comment).create? %>
     <br>
       <%= render :template => "/comments/_form.html.erb", locals: { topic: @topic, post: @post, comment: @comment} %>
+      <% end %>
   </div>
   <% if @post.image? %>
   <div class="form-group">
