@@ -8,6 +8,11 @@
        <%= @post.user.name %>
     </small>
     <p><%= markdown_to_html @post.body %></p>
+    <br>
+      <h4> COMMENTS </h4>
+      <%= render @comments %>
+    <br>
+      <%= render :template => "/comments/_form.html.erb", locals: { topic: @topic, post: @post, comment: @comment} %>
   </div>
   <% if @post.image? %>
   <div class="form-group">
