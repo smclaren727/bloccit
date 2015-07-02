@@ -16,6 +16,10 @@ group :development do
   gem 'better_errors', '~> 2.1.1'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.3.0'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
