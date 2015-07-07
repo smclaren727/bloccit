@@ -14,6 +14,7 @@ group :development do
   gem 'sqlite3'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'better_errors', '~> 2.1.1'
+  gem 'capybara'
 end
 
 group :development, :test do
