@@ -77,5 +77,10 @@ group :development, :test do
   
   gem 'will_paginate', '~> 3.0.7'
 
+  gem 'newrelic_rpm', '~> 3.12.1.298'
+
+  gem 'puma', group: :production
+  gem 'thin', group: :development
+
 end
 
