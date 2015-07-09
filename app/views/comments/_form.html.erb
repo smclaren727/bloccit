@@ -1,20 +1,14 @@
-<%= form_for [post, comment] do |f| %>
-      <% if comment.errors.any? %>
-      <div class="alert alert-danger">
-       <h4>There are <%= pluralize(comment.errors.count, "error") %>.</h4>
-       <ul>
-         <% comment.errors.full_messages.each do |msg| %>
-           <li><%= msg %></li>
-         <% end %>
-       </ul>
-     </div>
-   <% end %>
-   <h6> Add a Comment: </h6>
-    <%= form_group_tag(comment.errors[:body]) do %>
-     <%= f.label :body %>
-     <%= f.text_area :body,rows: 8, class: 'form-control', placeholder: "Body" %>
-   <% end %>
-   <div class="form-group">
-     <%= f.submit "Create Comment", class: 'btn btn-success' %>
-   </div>
- <% end %>
+<%= form_for [post, post.comments.new] do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control', placeholder: "Enter comment body" %>
+        <%= hidden_field_tag :post_id, params[:id] %>
+        <div class="form-group">
+        <%= f.submit "Create Comment", class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+
+  
+<% end %>
