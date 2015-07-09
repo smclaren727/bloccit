@@ -4,6 +4,10 @@ class TopicPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    record.public? || user.present?
+  end
+
   def create?
     user.present? && user.admin?
   end
@@ -12,8 +16,7 @@ class TopicPolicy < ApplicationPolicy
     create?
   end
 
-  def show?
-    record.public? || user.present?
+  def destroy?
+    update?
   end
-
 end

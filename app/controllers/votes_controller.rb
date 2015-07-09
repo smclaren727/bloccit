@@ -1,4 +1,4 @@
-class VotesController < ApplicationController 
+class VotesController < ApplicationController
   before_action :load_post_and_vote
 
   def up_vote
@@ -11,7 +11,7 @@ class VotesController < ApplicationController
     redirect_to :back
   end
 
-private
+  private
 
   def load_post_and_vote
     @post = Post.find(params[:post_id])
@@ -25,7 +25,7 @@ private
     else
       @vote = current_user.votes.build(value: new_value, post: @post)
       authorize @vote, :create?
-      @vote. save
+      @vote.save 
     end
   end
 end

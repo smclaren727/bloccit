@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   get 'comments/new'
 
   devise_for :users
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show, :index]
 
   resources :topics do
-    resources :posts, except: [:index]
+    resources :posts, except: [:index], controller: 'topics/posts'
   end
 
-  resources :posts, only: [] do
+  resources :posts, only: [:index] do
     resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
 
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
 
   root to: 'welcome#index'
 end
