@@ -31,16 +31,14 @@ describe User do
     end
   end
 
-  descibe ".top_rated" do
+  describe ".top_rated" do
 
     before do
-      @user1 = create(:user)
-      post = create(:post, user: @user1)
-      create(:comment, user: @user1, post: post)
+      @user1 = create(:user_with_post_and_comment)
 
       @user2 = create(:user)
-      post = create(:post, user: @user2)
-      2.times { create(:comment, user: @user2, post: post)}
+      @post = create(:post, user: @user2)
+      2.times { create(:comment, user: @user2, post: @post)}
     end
 
     it "returns users ordered by comments + posts" do
@@ -56,4 +54,5 @@ describe User do
       users = User.top_rated
       expect(users.first.comments_count).to eq(2)
     end
+  end
 end
