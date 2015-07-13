@@ -2,8 +2,6 @@ require 'rails_helper'
  
 describe "Visiting profiles" do
  
-  include TestFactories
- 
   before do
     @user = authenticated_user
     @post = associated_post(user: @user)

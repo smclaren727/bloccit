@@ -2,8 +2,6 @@ require 'rails_helper'
 
 describe User do 
 
-  include TestFactories
-
   describe "#favorited(post)" do
     before do
       @post = associated_post
@@ -31,7 +29,7 @@ describe User do
     end
   end
 
-  descibe ".top_rated" do
+  describe ".top_rated" do
 
     before do
       @user1 = create(:user)
@@ -56,4 +54,6 @@ describe User do
       users = User.top_rated
       expect(users.first.comments_count).to eq(2)
     end
+  end
+
 end
